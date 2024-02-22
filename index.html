@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Codificador/Decodificador de Texto</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <h1>
+            <a href="index.html" title="Codificador de texto"></a>
+                <a href="https://www.alura.com.br/challenges/challenge-one-logica?_gl=1*188hyez*_ga*MTYyMjAxMjE3NC4xNjk2OTQ2NjY4*_ga_1EPWSW3PCS*MTcwNjI3NjUxMi43MS4xLjE3MDYyNzY5MzQuMC4wLjA.*_fplc*UzZjZDBJWnVvbDklMkI3YXdXejVOaGI1cW52SXRqdWROT1VmQVFrZWZaZVUxOENCeEhQM05iUUZHbTMlMkZ4bWRCRDRiTkg2OWpHTDZLZUVzOWc4TDRMJTJCTU9QZFNqTWlabDByZUkxd2k1c05YQ3hWJTJCQ1olMkJHc0xYekVDMUVEU2t4QSUzRCUzRA.." title="Challenge Alura T6ONE" target="_blank">
+                <img class="apresentacao__logo" src="assets/logo_alura_azul.png" alt="Logo Alura">
+            </a>
+        </h1>     
+    </header>
+    <main class="apresentacao">
+        <section>
+            <textarea class="texto-entrada" cols="60" rows="14" placeholder= "Digite seu texto..."></textarea>
+
+            <div class="informacao">
+                <ul class="mensagens-erro"></ul>
+            </div>
+            
+            <div class="botoes">    
+                <button type="button" class="btn-codificar">Codificar</button>
+                <button type="button" class="btn-decodificar">Decodificar</button>
+            </div>
+        </section>
+
+        <section class="container">
+            <textarea class="texto-saida" cols="30" rows="19" placeholder=" " readonly></textarea>
+            <button type="button" class="invisivel btn-copiar">Copiar</button>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="redes">
+            <p>Contato</p>
+        
+        <a href="https://github.com/ClaudiomiroMarques" title="cmarques | GitHub" target="_blank">            
+            <img class="logoredes" src="assets/logo-github.png" alt="Logo do GitHub" id="github"> GitHub
+        </a>
+
+         <a href="https://www.linkedin.com/in/claudiomiromarques" title="Claudiomiro Marques | LinkedIn" target="_blank">
+            <img class="logoredes" src="assets/logo-linkedin.png" alt="Logo do LinkedIn" id="linkedin"> LinkedIn
+
+        </a>
+        <a href="https://medium.com/@claudiomiro.marques" title="Claudiomiro.Marques| Medium" target="_blank">
+            <img class="logoredes" src="assets/logo-medium.png" alt="Logo do Medium" id="Medium"> Medium
+        </a>
+        </div>
+        
+        <div class="rodape">
+            <p>@cmarques 2024</p>
+        </div>
+    </footer>
+
+    <script src="js/criptografar.js"></script>
+    <script src="js/validar.js"></script>
+    <script src="js/copiar.js"></script>
+</body>
+</html>
+</body>
+</html>

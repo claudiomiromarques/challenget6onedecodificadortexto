@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+    --cor-principal: #E5E5E5;
+    --cor-secundaria: #1a1a40 /* #0a3871*/;
+    --cor-tercearia: white;
+    --fonte-primaria: 'Montserrat', sans-serif;
+}
+
+* footer {
+    font-family: var(--fonte-primaria);
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 2.0;
+    text-align: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;  
+}
+
+body {
+    box-sizing: border-box;
+    background-color: var(--cor-principal);
+    color: var(--cor-secundaria);
+}
+
+.cabecalho {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0 0 30px;
+}
+
+.apresentacao__logo {
+    border-radius: 50px;
+    border: 2px solid var(--cor-secundaria);
+    box-shadow: 5px 5px 5px;
+}
+
+.apresentacao {
+    display: flex;
+    justify-content: space-around;
+}
+
+textarea {
+    resize: none; 
+
+}   
+.texto-entrada {
+    font-size: 20px;
+    font-weight: var(--fonte-primaria);
+    color: var(--cor-secundaria);
+    margin-top: 25px;
+    margin-left: 15px;
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: 30px;
+    padding: 1.0rem;
+}
+.informacao {
+    margin-left: 15px;
+    font-size: var(--fonte-primaria);
+
+}
+.mensagens-erro log::before {
+    content: url(../assets/ponto-de-exclamacao.png);
+    width: 16px;
+    height: 17px;
+    padding: 0.5rem;
+    vertical-align: middle;
+}
+.mensagens-erro log {
+    font-size: 15px;
+    margin-left: 25px;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: row;
+    margin-top: 57px;
+    margin-left: 15px;
+}
+
+button {
+    width: 325px;
+    height: 60px;
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 25px;
+    box-shadow: 5px 5px 15px;
+}
+
+.btn-codificar {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-tercearia);
+    font-weight: var(--fonte-primaria);
+}
+.btn-decodificar {
+    margin-left: 10px;
+    background-color: var(--cor-tercearia);
+    color: var(--cor-secundaria);
+    font-weight: var(--fonte-primaria);
+}
+
+.container {
+    background-color: var(--cor-tercearia);
+    margin: 20px 0;
+    border-radius: 30px;
+    padding: 2rem;
+    height: 30rem;
+    text-align: center;
+    box-shadow: 15px 20px 40px;
+}
+
+.texto-saida {
+    font-size: 20px;
+    font-weight: var(--fonte-primaria);
+    color: var(--cor-secundaria);
+    position: relative;
+    border-color: transparent;
+    border-radius: 30px;
+    padding: 0.5rem;
+}
+/* a pseudoclasse placeholder - mascara a imagem dentro da cx de texto*/
+
+.texto-saida:placeholder-shown {
+    background-image: url(../assets/imagem-lupa.png);
+    background-position: top;
+    background-repeat: no-repeat;
+}
+    
+.texto-saida:not(:placeholder-shown) {  
+    background-color: var(--cor-tercearia);
+}
+.invisivel {
+    display: none;
+}
+.btn-copiar {
+    background-color: var(--cor-tercearia);
+    color: var(--cor-secundaria);
+    font-weight: var(--fonte-primaria);
+}
+
+.redes {
+    display: inline;
+    font-size: 20px;
+    text-shadow: 5px 5px 5px rgb(42, 42, 64);
+    font-weight: var(--fonte-primaria);
+    color: var(--cor-secundaria);
+    vertical-align: middle;
+    
+}
+
+.redes b {
+    margin-bottom: 5px;
+}
+.redes a {
+    margin: 5px 15px;
+    text-decoration: none;
+    color: var(--cor-secundaria);
+}
+
+.redes a:hover {
+    color: var(--cor-secundaria);
+}
+
+.rodape {
+    padding: 20px;
+    color: var(--cor-secundaria);
+    text-align: center;
+    text-shadow: 5px 5px 5px rgb(22, 22, 44);
+    font-family: var(--fonte-primaria);
+    font-size: 1.0rem;
+    margin-bottom: 0.5rem;
+}
+
+/*implementada a responsividade*/
+
+@media (max-width: 1000px) {
+    * {
+        font-size: 14px;
+    }
+    .cabecalho {
+        display: block;
+        margin: 5px 0 0 5px;
+    }
+    .apresentacao {
+        display: inline;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .texto-entrada {
+        margin-top: 1rem;
+        max-width: 80%;
+        height: 10%;
+    }
+    .informacao {
+        margin: 0 auto;
+    }
+    .mensagens-erro li {
+        font-size: 18px;
+        margin: 0 auto;
+    }
+    .botoes {
+        display: inline;
+        margin: 15px auto;
+    }
+    button {
+        height: 50px;
+        font-weight: bold;
+    }
+  
+    .btn-codificar, .btn-decodificar {
+        width: 60%;
+        margin: 15px auto;
+    }
+    .container {
+        margin: 20px auto;
+        width: 70%;
+        height: 30%;
+        padding: 1rem;
+    }
+    .texto-saida {
+        width: 90%;
+        height: 30%;
+    }
+    .texto-saida:placeholder-shown {
+        background-image: url(../assets/imagem-lupa-mobile.png);
+    }
+    .btn-copiar {
+        display: block;
+        width: 70%;
+        margin: 0 auto;
+    }
+    .invisivel {
+        display: none;
+    }
+  
+    .footer {
+        margin: 1rem auto;
+    }
+    .redes {
+        font-size: 5px;
+    }
+    .redes b {
+        margin-bottom: 5px;
+    }
+    .redes a {
+        margin: 5px;
+    }
+    .rodape {
+        font-size: 5px;
+        margin-top: 5px;
+        margin: 0;
+        padding: 0;
+    }
+    .logoredes {
+        height: 30px;
+
+    }
+    
+}
