@@ -39,7 +39,7 @@ Extras:
 <p>
 Subi o projeto na vercel, confira como ficou no link abaixo: 
   
-https://desafio-challenge-decodificador-texto.vercel.app
+https://challenge-t6one-decodificador-texto.vercel.app/
 </p>
 
 ## 🚀 Tecnologias
