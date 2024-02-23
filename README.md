@@ -27,19 +27,15 @@ O resultado deve ser exibido na tela.
 Extras:
 - Um botão que copie o texto criptografado/descriptografado para a área de transferência - ou seja, que tenha a mesma funcionalidade do ctrl+C ou da opção "copiar" do menu dos aplicativos.</p>
 
-<p>
-##🚀 O presente código realiza o que foi pedido, eu deixei uma função extra no JS comentada onde tem a instrução a ser realizada para gerar uma codificação rândomica do texto em letras maisculas, numeros e caracteres alfa numericos.....
 
-</p>
 
-<p>
+<>
 ##🚀 Ainda se clicar no logo da Alura, será redirecionado ao site do desafio.
 
-</p>
-<p>
+
 Subi o projeto na vercel, confira como ficou no link abaixo: 
   
-https://challenge-t6one-decodificador-texto.vercel.app/
+https://desafio-challenge-decodificador-texto.vercel.app
 </p>
 
 ## 🚀 Tecnologias
