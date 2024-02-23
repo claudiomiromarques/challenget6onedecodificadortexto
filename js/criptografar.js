@@ -1,6 +1,6 @@
 
 function codifica(texto) {
-    const codigo = {
+    const mapeamento = {
         "a": "ai",
         "e": "enter",
         "i": "imes",
@@ -9,82 +9,54 @@ function codifica(texto) {
         "b": "bah"
     };
 
-    var caracteres = texto.value.split("");
-    
-    for (let i = 0; i < caracteres.length; i++) {
-        var caractere = caracteres[i];
-        if (codigo.hasOwnProperty(caractere)) {
-            caracteres[i] = codigo[caractere];
-        }
-    }
-    
-    return caracteres.join("");
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/*
-// comente a função acima e descomente essa função, para gerar uma encriptação de forma randomica, apresentanda em letras maiusculas
-// numeros e caracteres especiais....
-
-function codifica(texto) {
-    const letrasMaisculas = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const numeros = '0123456789';
-    const alfanumericos = ['!', '@', '#', '$', '%', '&', '*', '(', ')', '_', '+', '-', '=', '[', ']', '{', '}', '|', ';', ':', "'", '"', ',', '.', '/', '<', '>', '?', '~', '`'];
-    
     const caracteres = texto.value.split("");
-    let codigoTexto = '';
 
-    for (let i = 0; i < caracteres.length; i++) {
-        const character = caracteres[i];
-        let novoCaracter = '';
-        if (/[a-z]/.test(character)) { // Verifica se é letra minúscula
-            const randomIndex = Math.floor(Math.random() * letrasMaisculas.length);
-            novoCaracter = letrasMaisculas[randomIndex];
-        } else if (/[A-Z]/.test(character)) { // Verifica se é letra maiúscula
-            const randomIndex = Math.floor(Math.random() * numeros.length);
-            novoCaracter = numeros[randomIndex];
-        } else if (/[0-9]/.test(character)) { // Verifica se é número
-            const randomIndex = Math.floor(Math.random() * alfanumericos.length);
-            novoCaracter = alfanumericos[randomIndex];
-        } else { // Se não for nenhum dos anteriores, mantém o caractere original
-            novoCaracter = character;
-        }
-        codigoTexto += novoCaracter;
-    }
+     // Substituir cada caractere pelo seu código correspondente, se existir
+     const textoCodificado = caracteres.map(function(caractere) {
+        
+    // Se o caractere estiver no objeto de mapeamento, substitua-o; caso contrário, mantenha-o igual
+        return mapeamento[caractere] || caractere;
+    });
 
-    return codigoTexto;
+    // Juntar os caracteres codificados em uma string e retornar
+        return textoCodificado.join("");
+ 
 }
-*/
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function decodifica(texto) {
+    // Objeto de mapeamento para as decodificações
     const codigo = {
         "ai": "a",
         "enter": "e",
         "imes": "i",
         "ober": "o",
         "ufat": "u",
-        "b": "bah"
+        "bah": "b" 
     };
+
+    // Obtendo o texto a ser decodificado
     texto = texto.value;
 
-    for(var i = 0; i < codigo.length; i++) {
-        if(texto.includes(codigo[i][1])) {
-            texto = texto.replaceAll(codigo[i][1], codigo[i][0]);
-        }
+    // Iterando sobre as chaves e valores do objeto de codificação
+    for (const [codificado, decodificado] of Object.entries(codigo)) {
+
+    // Substituindo todas as ocorrências do texto codificado pelo texto decodificado
+        texto = texto.split(codificado).join(decodificado);
     }
+
+    // Retornando o texto decodificado
     return texto;
 }
 
 function escreveCodificado() {
-    var btnCopiar = document.querySelector(".btn-copiar");
+    var btnCodificar = document.querySelector(".btn-codificar");
     btnCopiar.classList.remove("invisivel");
     
     resultado.textContent = codifica(inputTexto);
 }
 
 function escreveDecodificado() {
-    var btnCopiar = document.querySelector(".btn-copiar");
+    var btnDecodificar = document.querySelector(".btn-decodificar");
     btnCopiar.classList.remove("invisivel");
 
     resultado.textContent = decodifica(inputTexto);
@@ -113,6 +85,7 @@ btnCodificar.onclick = function() {
 
 btnDecodificar.onclick = function() {
     var erros = validaTexto(inputTexto);
+
 
     if(erros.length > 0) {
         mostraErros(erros);
