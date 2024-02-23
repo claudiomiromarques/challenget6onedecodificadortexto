@@ -29,7 +29,7 @@ Extras:
 
 
 
-<>
+
 ##🚀 Ainda se clicar no logo da Alura, será redirecionado ao site do desafio.
 
 
